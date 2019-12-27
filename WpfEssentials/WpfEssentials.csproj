@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net452;</TargetFrameworks>
+    <UseWpf>True</UseWpf>
+    <AssemblyName>WpfEssentials</AssemblyName>
+    <RootNamespace>WpfEssentials</RootNamespace>
+    <Copyright>(C) 2019 Wes Hampson</Copyright>
+    <Company />
+    <Authors>Wes Hampson</Authors>
+  </PropertyGroup>
+
+</Project>

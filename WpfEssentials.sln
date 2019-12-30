@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfEssentials", "WpfEssentials\WpfEssentials.csproj", "{BC7A9078-347B-4873-97C7-CE3DC436B025}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfEssentials.Tests", "WpfEssentials.Tests\WpfEssentials.Tests.csproj", "{D12A6847-67B6-41AB-A7F6-59938D5753E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfEssentials.Tests", "WpfEssentials.Tests\WpfEssentials.Tests.csproj", "{D12A6847-67B6-41AB-A7F6-59938D5753E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfEssentials.Examples", "WpfEssentials.Examples\WpfEssentials.Examples.csproj", "{67B69A58-397F-453A-A45E-5B34A8127083}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D12A6847-67B6-41AB-A7F6-59938D5753E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D12A6847-67B6-41AB-A7F6-59938D5753E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D12A6847-67B6-41AB-A7F6-59938D5753E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B69A58-397F-453A-A45E-5B34A8127083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B69A58-397F-453A-A45E-5B34A8127083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B69A58-397F-453A-A45E-5B34A8127083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B69A58-397F-453A-A45E-5B34A8127083}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

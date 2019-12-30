@@ -1,5 +1,6 @@
 # WpfEssentials
 [![Nuget (WpfEssentials)](https://img.shields.io/nuget/v/WpfEssentials)](https://www.nuget.org/packages/WpfEssentials/)
+[![Build Status](https://github.com/whampson/WpfEssentials/workflows/.github/workflows/dotnetcore.yml/badge.svg)](https://github.com/whampson/WpfEssentials/actions)
 
 A .NET package containing helper classes, extension methods, converters, and
 base classes designed to simplify Win32 WPF app development.

@@ -6,7 +6,7 @@ namespace WpfEssentials.Events
     /// <summary>
     /// Provides data for invoking a message box via an event.
     /// </summary>
-    public sealed class MessageBoxEventArgs : EventArgs
+    public class MessageBoxEventArgs : EventArgs
     {
         /// <summary>
         /// Gets or sets the text to display in the body of the message box.

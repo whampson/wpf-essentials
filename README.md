@@ -24,7 +24,7 @@ reference to an arbitrary `Attribute` attached to an enum value.
 [![Nuget (WpfEssentials.Win32)](https://img.shields.io/nuget/v/WpfEssentials.Win32)](https://www.nuget.org/packages/WpfEssentials.Win32/)
 [![Build Status](https://github.com/whampson/WpfEssentials/workflows/Win32/badge.svg)](https://github.com/whampson/WpfEssentials/actions)
 
-A Win32-specific extension of WpfEssentials.
+A Win32-specific extension of **WpfEssentials**.
 
 ### Features
 - `RelayCommand` - An `ICommand` implementation that lets you bind functions to

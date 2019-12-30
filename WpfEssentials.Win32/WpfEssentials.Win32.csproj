@@ -2,7 +2,7 @@
 
   <PropertyGroup>
       <UseWpf>True</UseWpf>
-      <TargetFrameworks>netcoreapp3.0;net45;</TargetFrameworks>
+      <TargetFrameworks>netcoreapp3.0;net461;</TargetFrameworks>
       <AssemblyName>WpfEssentials.Win32</AssemblyName>
       <RootNamespace>WpfEssentials.Win32</RootNamespace>
       <Copyright>(C) 2019-2020 Wes Hampson</Copyright>

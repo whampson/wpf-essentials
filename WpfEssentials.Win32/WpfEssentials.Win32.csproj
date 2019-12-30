@@ -9,14 +9,14 @@
       <Company>Wes Hampson</Company>
       <Authors>Wes Hampson</Authors>
       <RepositoryType>GitHub</RepositoryType>
-      <PackageTags>WPF Essentials WpfEssentials RelayCommand EnumDescriptionConverter MessageBoxEx MessageBoxEventArgs FileDialogEventArgs</PackageTags>
+      <PackageTags>WPF Essentials Win32 WpfEssentials RelayCommand EnumDescriptionConverter EnumValueCollection MessageBoxEx MessageBoxEventArgs FileDialogEventArgs</PackageTags>
       <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
       <Version>1.1.0</Version>
       <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
       <NeutralLanguage>en-US</NeutralLanguage>
       <PackageLicenseExpression>MIT</PackageLicenseExpression>
-      <Description>A .NET package containing helper classes, extension methods, converters, and base classes designed to simplify Win32 WPF app development.</Description>
-      <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+      <Description>A .NET package containing data types, base classes, extension methods, and converters designed to simplify Win32 WPF app development.</Description>
+      <PackageReleaseNotes>Split up cross-platform and Win32-specific code.</PackageReleaseNotes>
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 

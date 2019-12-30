@@ -1,11 +1,9 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Globalization;
-using System.Windows;
-using WpfEssentials.Converters;
+using WpfEssentials.Win32.Converters;
 using Xunit;
 
-namespace WpfEssentials.Tests
+namespace WpfEssentials.Win32.Tests
 {
     public class EnumDescriptionConverterTests
     {

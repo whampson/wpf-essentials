@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using WpfEssentials.Collections;
-using WpfEssentials.Events;
 using Xunit;
 
 namespace WpfEssentials.Tests

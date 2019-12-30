@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
 using System.Windows.Interop;
+using WpfEssentials.Properties;
 
 namespace WpfEssentials
 {
@@ -262,7 +263,7 @@ namespace WpfEssentials
         {
             if (m_hHook != IntPtr.Zero)
             {
-                throw new NotSupportedException("Multiple calls are not supported.");
+                throw new NotSupportedException(Resources.NotSupported_MultipleCalls);
             }
 
 #pragma warning disable 0618    // GetCurrentThreadId() is marked obsolete, but it still works for what we need it to do.

@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+      <UseWpf>True</UseWpf>
+      <TargetFrameworks>netcoreapp3.0;net45;</TargetFrameworks>
+      <AssemblyName>WpfEssentials.Win32</AssemblyName>
+      <RootNamespace>WpfEssentials.Win32</RootNamespace>
+      <Copyright>(C) 2019-2020 Wes Hampson</Copyright>
+      <Company>Wes Hampson</Company>
+      <Authors>Wes Hampson</Authors>
+      <RepositoryType>GitHub</RepositoryType>
+      <PackageTags>WPF Essentials WpfEssentials RelayCommand EnumDescriptionConverter MessageBoxEx MessageBoxEventArgs FileDialogEventArgs</PackageTags>
+      <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
+      <Version>1.1.0</Version>
+      <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
+      <NeutralLanguage>en-US</NeutralLanguage>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+      <Description>A .NET package containing helper classes, extension methods, converters, and base classes designed to simplify Win32 WPF app development.</Description>
+      <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpfEssentials\WpfEssentials.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

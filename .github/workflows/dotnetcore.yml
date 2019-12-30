@@ -5,16 +5,12 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-        matrix:
-            dotnet: [ '3.0.100', '3.1.100' ]
-    name: .Net Core ${{ matrix.dotnet }}
     steps:
     - uses: actions/checkout@master
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ matrix.dotnet }}
+        dotnet-version: '3.1.100'
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Unit tests

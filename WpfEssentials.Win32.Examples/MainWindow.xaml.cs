@@ -48,5 +48,10 @@ namespace WpfEssentials.Examples
         {
             ViewModel.ReadSelectedFile();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ViewModel.UpdateListBox();
+        }
     }
 }

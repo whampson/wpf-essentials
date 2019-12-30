@@ -1,12 +1,23 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using WpfEssentials.Win32;
 
 namespace WpfEssentials.Examples
 {
+    public enum DisplayType
+    {
+        [Description("Full Path")]
+        FullPath,
+
+        [Description("Filename Only")]
+        FilenameOnly
+    }
+
     public class ViewModel : ObservableObject
     {
         public event EventHandler<MessageBoxEventArgs> MessageBoxRequested;
@@ -14,9 +25,11 @@ namespace WpfEssentials.Examples
 
         private bool m_userCanceledExit;
         private bool m_buttonClicked;
+        private ObservableCollection<string> m_openFilesFullPaths;
         private ObservableCollection<string> m_openFiles;
         private int m_openFileSelectedIndex;
         private string m_text;
+        private DisplayType m_selectedDisplayType;
 
         public bool UserCanceledExit
         {
@@ -46,6 +59,12 @@ namespace WpfEssentials.Examples
         {
             get { return m_text; }
             set { m_text = value; OnPropertyChanged(); }
+        }
+
+        public DisplayType SelectedDisplayType
+        {
+            get { return m_selectedDisplayType; }
+            set { m_selectedDisplayType = value; OnPropertyChanged(); }
         }
 
         public ICommand ClickMeCommand
@@ -83,6 +102,11 @@ namespace WpfEssentials.Examples
             }
         }
 
+        public ViewModel()
+        {
+            m_openFilesFullPaths = new ObservableCollection<string>();
+        }
+
         public void ReadSelectedFile()
         {
             if (m_openFileSelectedIndex < 0 || m_openFileSelectedIndex >= m_openFiles.Count)
@@ -91,8 +115,22 @@ namespace WpfEssentials.Examples
                 return;
             }
 
-            string path = m_openFiles[m_openFileSelectedIndex];
+            string path = m_openFilesFullPaths[m_openFileSelectedIndex];
             Text = File.ReadAllText(path);
+        }
+
+        public void UpdateListBox()
+        {
+            if (m_selectedDisplayType == DisplayType.FullPath)
+            {
+                OpenFiles = new ObservableCollection<string>(m_openFilesFullPaths);
+            }
+            else if (m_selectedDisplayType == DisplayType.FilenameOnly)
+            {
+                OpenFiles = new ObservableCollection<string>(m_openFilesFullPaths
+                    .Select(x => Path.GetFileName(x))
+                    .ToList());
+            }
         }
 
         public void ConfirmAppExit()
@@ -122,7 +160,8 @@ namespace WpfEssentials.Examples
                 return;
             }
 
-            OpenFiles = new ObservableCollection<string>(e.FileNames);
+            m_openFilesFullPaths = new ObservableCollection<string>(e.FileNames);
+            UpdateListBox();
             ReadSelectedFile();
         }
     }

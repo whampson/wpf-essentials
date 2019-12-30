@@ -4,12 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfEssentials.Examples"
+        xmlns:conv="clr-namespace:WpfEssentials.Win32.Converters;assembly=WpfEssentials.Win32"
+        xmlns:ext="clr-namespace:WpfEssentials.Win32.Extensions;assembly=WpfEssentials.Win32"
         mc:Ignorable="d"
         Title="Example"
         Height="350" Width="600"
         Closing="Window_Closing">
 
     <Window.Resources>
+        <conv:EnumDescriptionConverter x:Key="EnumDescriptionConverter"/>
+        <Style TargetType="ComboBox" x:Key="EnumComboBoxStyle">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="Margin" Value="5"/>
         </Style>
@@ -68,7 +81,10 @@
                Content="Display:"/>
 
         <ComboBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
-                  Margin="5"/>
+                  Style="{StaticResource EnumComboBoxStyle}"
+                  ItemsSource="{ext:EnumValueCollection EnumType=local:DisplayType}"
+                  SelectedItem="{Binding SelectedDisplayType}"
+                  SelectionChanged="ComboBox_SelectionChanged"/>
 
     </Grid>
 </Window>

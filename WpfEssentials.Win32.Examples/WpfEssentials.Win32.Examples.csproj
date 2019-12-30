@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netcoreapp3.0;net45;</TargetFrameworks>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\WpfEssentials\WpfEssentials.csproj" />
+    <ProjectReference Include="..\WpfEssentials.Win32\WpfEssentials.Win32.csproj" />
   </ItemGroup>
 
 </Project>

@@ -26,9 +26,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="115"/>
+            <ColumnDefinition Width="55"/>
+            <ColumnDefinition Width="60"/>
             <ColumnDefinition Width="115"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
@@ -36,27 +38,37 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource ButtonStyle}"
+        <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                Style="{StaticResource ButtonStyle}"
                 Content="Click Me!"
                 Command="{Binding ClickMeCommand}"/>
 
-        <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ButtonStyle}"
+        <Button Grid.Row="0" Grid.Column="2"
+                Style="{StaticResource ButtonStyle}"
                 Content="Open Text File(s)"
                 Command="{Binding OpenFileCommand}"
                 IsEnabled="{Binding ButtonClicked}"/>
 
-        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
                  Margin="5"
                  ItemsSource="{Binding OpenFiles}"
                  SelectedIndex="{Binding OpenFileSelectedIndex}"
                  SelectionChanged="ListBox_SelectionChanged"/>
 
-        <TextBox Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3"
+        <TextBox Grid.Row="1" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="3"
                  Margin="5"
                  TextWrapping="Wrap"
                  IsReadOnly="True"
                  VerticalScrollBarVisibility="Visible"
                  Text="{Binding Text}"/>
+
+        <Label Grid.Row="2" Grid.Column="0"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               Content="Display:"/>
+
+        <ComboBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+                  Margin="5"/>
 
     </Grid>
 </Window>

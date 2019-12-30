@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using WpfEssentials.Events;
+using WpfEssentials.Win32;
 
 namespace WpfEssentials.Examples
 {

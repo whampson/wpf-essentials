@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfEssentials", "WpfEssenti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfEssentials.Tests", "WpfEssentials.Tests\WpfEssentials.Tests.csproj", "{D12A6847-67B6-41AB-A7F6-59938D5753E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfEssentials.Win32.Examples", "WpfEssentials.Examples\WpfEssentials.Win32.Examples.csproj", "{67B69A58-397F-453A-A45E-5B34A8127083}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfEssentials.Win32", "WpfEssentials.Win32\WpfEssentials.Win32.csproj", "{D724627F-B527-4D24-A53C-9580F859BF3E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfEssentials.Win32.Examples", "WpfEssentials.Win32.Examples\WpfEssentials.Win32.Examples.csproj", "{67B69A58-397F-453A-A45E-5B34A8127083}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfEssentials.Win32.Tests", "WpfEssentials.Win32.Tests\WpfEssentials.Win32.Tests.csproj", "{5573AC4D-6E8F-4030-8D5D-2573A8302E8B}"
 EndProject

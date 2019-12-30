@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using WpfEssentials.Events;
 
-namespace WpfEssentials.Collections
+namespace WpfEssentials
 {
     /// <summary>
     /// An extension of <see cref="ObservableCollection{T}"/> that allows the

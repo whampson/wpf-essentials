@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace WpfEssentials.Events
+namespace WpfEssentials
 {
     /// <summary>
     /// Provides data for the <see cref="FullyObservableCollection{T}.ItemPropertyChanged"/> event.

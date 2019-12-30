@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using System.Windows.Controls;
 using WpfEssentials.Events;
 
 namespace WpfEssentials.Examples
@@ -41,6 +42,11 @@ namespace WpfEssentials.Examples
             {
                 e.Cancel = true;
             }
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ViewModel.ReadSelectedFile();
         }
     }
 }

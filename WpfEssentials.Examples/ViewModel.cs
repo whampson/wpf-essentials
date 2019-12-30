@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using WpfEssentials.Events;
@@ -12,6 +14,9 @@ namespace WpfEssentials.Examples
 
         private bool m_userCanceledExit;
         private bool m_buttonClicked;
+        private ObservableCollection<string> m_openFiles;
+        private int m_openFileSelectedIndex;
+        private string m_text;
 
         public bool UserCanceledExit
         {
@@ -25,13 +30,31 @@ namespace WpfEssentials.Examples
             set { m_buttonClicked = value; OnPropertyChanged(); }
         }
 
+        public ObservableCollection<string> OpenFiles
+        {
+            get { return m_openFiles; }
+            set { m_openFiles = value; OnPropertyChanged(); }
+        }
+
+        public int OpenFileSelectedIndex
+        {
+            get { return m_openFileSelectedIndex; }
+            set { m_openFileSelectedIndex = value; OnPropertyChanged(); }
+        }
+
+        public string Text
+        {
+            get { return m_text; }
+            set { m_text = value; OnPropertyChanged(); }
+        }
+
         public ICommand ClickMeCommand
         {
             get
             {
                 return new RelayCommand(
                     () => MessageBoxRequested?.Invoke(this, new MessageBoxEventArgs(
-                        "Now you can choose a file!", "Information",
+                        "Now you can choose a file!", "Hint",
                         icon: MessageBoxImage.Information,
                         callback: (x) => ButtonClicked = true))
                 );
@@ -47,16 +70,10 @@ namespace WpfEssentials.Examples
                     () => FileDialogRequested?.Invoke(this, new FileDialogEventArgs(
                         FileDialogType.OpenFileDialog, OpenFileCommand_Callback)
                         {
-                            //Title = "Select a File...",
-                            //Filter = "Text Documents|*.txt|All Files|*.*",
-                            //FilterIndex = 2,
-                            //FileName = "foo.txt",
-                            //Multiselect = false,
-                            //ValidateNames = true,
-                            ValidateNames = false,
-                            CheckFileExists = false,
-                            CheckPathExists = true,
-                            FileName = "Folder Selection."
+                            Title = "Open File(s)...",
+                            Filter = "Text Documents|*.txt",
+                            Multiselect = true,
+                            ValidateNames = true,
                         }
                     ),
 
@@ -64,6 +81,18 @@ namespace WpfEssentials.Examples
                     () => ButtonClicked
                 );
             }
+        }
+
+        public void ReadSelectedFile()
+        {
+            if (m_openFileSelectedIndex < 0 || m_openFileSelectedIndex >= m_openFiles.Count)
+            {
+                Text = "";
+                return;
+            }
+
+            string path = m_openFiles[m_openFileSelectedIndex];
+            Text = File.ReadAllText(path);
         }
 
         public void ConfirmAppExit()
@@ -84,20 +113,17 @@ namespace WpfEssentials.Examples
 
         private void OpenFileCommand_Callback(bool? result, FileDialogEventArgs e)
         {
-            if (result == true)
+            if (result != true)
             {
                 MessageBoxRequested?.Invoke(this, new MessageBoxEventArgs(
-                    "You selected: " + e.FileName,
-                    "Selected File",
-                    icon: MessageBoxImage.Information));
-            }
-            else
-            {
-                MessageBoxRequested?.Invoke(this, new MessageBoxEventArgs(
-                    "Operation canceled.",
+                    "Operation canceled!",
                     "Canceled",
                     icon: MessageBoxImage.Exclamation));
+                return;
             }
+
+            OpenFiles = new ObservableCollection<string>(e.FileNames);
+            ReadSelectedFile();
         }
     }
 }

@@ -44,7 +44,7 @@ namespace WpfEssentials.Win32
         public Action<MessageBoxResult> Callback { get; set; }
 
         /// <summary>
-        /// 
+        /// Creates a new <see cref="MessageBoxEventArgs"/> instance.
         /// </summary>
         /// <param name="text">The text to display in the body of the message box.</param>
         /// <param name="title">The text to dsiplay in the window title.</param>

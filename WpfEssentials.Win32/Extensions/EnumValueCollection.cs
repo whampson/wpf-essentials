@@ -5,8 +5,15 @@ using System.Windows.Markup;
 
 namespace WpfEssentials.Win32.Extensions
 {
+    /// <summary>
+    /// A <see cref="MarkupExtension"/> that creates a collection of all values in
+    /// an <see cref="Enum"/>.
+    /// </summary>
     public class EnumValueCollectionExtension : MarkupExtension
     {
+        /// <summary>
+        /// The type of <see cref="Enum"/>.
+        /// </summary>
         public Type EnumType { get; set; }
 
         public override object ProvideValue(IServiceProvider _)

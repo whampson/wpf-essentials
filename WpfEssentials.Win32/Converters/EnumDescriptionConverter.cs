@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Data;
 using WpfEssentials.Extensions;
@@ -6,9 +7,9 @@ using WpfEssentials.Extensions;
 namespace WpfEssentials.Win32.Converters
 {
     /// <summary>
-    /// Converts an Enum value into a string containing the text from it's
-    /// Description attribute. If no Description Attribute is available,
-    /// the Enum's ToString() value is used instead.
+    /// Converts an <see cref="Enum"/> value into a <see cref="string"/> containing the
+    /// text from it's <see cref="DescriptionAttribute"/>. If no DescriptionAttribute is present, the
+    /// Enum's ToString() value is used instead.
     /// </summary>
     [ValueConversion(typeof(Enum), typeof(string))]
     public class EnumDescriptionConverter : IValueConverter

@@ -9,7 +9,7 @@ namespace WpfEssentials
     /// <summary>
     /// An extension of <see cref="ObservableCollection{T}"/> that allows the
     /// view to monitor changes to the state of each item in the collection,
-    /// in addition to changes in the collection itself.
+    /// in addition to monitoring changes made to the collection itself.
     /// </summary>
     /// <remarks>
     /// Adapted from code by various authors.

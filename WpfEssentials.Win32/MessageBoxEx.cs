@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows;
 using System.Windows.Interop;
 using WpfEssentials.Win32.Properties;
@@ -9,8 +8,7 @@ using WpfEssentials.Win32.Properties;
 namespace WpfEssentials.Win32
 {
     /// <summary>
-    /// A <see cref="System.Windows.MessageBox"/> wrapper that is more compatible
-    /// with WPF applications.
+    /// A <see cref="MessageBox"/> wrapper that plays nicer with WPF applications.
     /// </summary>
     /// <remarks>
     /// Adapted from responses to a question asked at https://stackoverflow.com/q/564710/.
@@ -351,6 +349,16 @@ namespace WpfEssentials.Win32
             HCBT_SETFOCUS,
         }
 
+        [StructLayout(LayoutKind.Sequential)]
+        public struct CWPRETSTRUCT
+        {
+            public IntPtr lResult;
+            public IntPtr lParam;
+            public IntPtr wParam;
+            public uint message;
+            public IntPtr hwnd;
+        };
+
         [DllImport("user32.dll")]
         private static extern bool GetWindowRect(IntPtr hWnd, ref Rectangle lpRect);
 
@@ -368,15 +376,5 @@ namespace WpfEssentials.Win32
 
         [DllImport("kernel32.dll")] 
         static extern IntPtr GetCurrentThreadId();
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct CWPRETSTRUCT
-        {
-            public IntPtr lResult;
-            public IntPtr lParam;
-            public IntPtr wParam;
-            public uint message;
-            public IntPtr hwnd;
-        };
     }
 }

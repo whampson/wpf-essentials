@@ -4,7 +4,7 @@ using System.Windows.Input;
 namespace WpfEssentials.Win32
 {
     /// <summary>
-    /// Provides a simple way to bind commands to components in a view.
+    /// Provides a simple way to bind functions to components in a view.
     /// </summary>
     /// <remarks>
     /// Adapted from Josh Smith's RelayCommand class.
@@ -15,10 +15,20 @@ namespace WpfEssentials.Win32
         private readonly Func<bool> canExecute;
         private readonly Action execute;
 
+        /// <summary>
+        /// Creates a new <see cref="RelayCommand"/> instance with the specified action.
+        /// </summary>
+        /// <param name="what">The method to be called when the command is invoked.</param>
         public RelayCommand(Action what)
             : this(what, null)
         { }
 
+        /// <summary>
+        /// Creates a new <see cref="RelayCommand"/> instance with the specified action
+        /// and condition.
+        /// </summary>
+        /// <param name="what">The method to be called when the command is invoked.</param>
+        /// <param name="when">The method that determines whether the command can execute in its current state.</param>
         public RelayCommand(Action what, Func<bool> when)
         {
             execute = what;
@@ -56,7 +66,7 @@ namespace WpfEssentials.Win32
     }
 
     /// <summary>
-    /// Provides a simple way to bind commands to components in a view.
+    /// Provides a simple way to bind functions to components in a view.
     /// </summary>
     /// <typeparam name="T">
     /// Action parameter type.
@@ -70,10 +80,21 @@ namespace WpfEssentials.Win32
         private readonly Predicate<T> canExec;
         private readonly Action<T> exec;
 
+        /// <summary>
+        /// Creates a new <see cref="RelayCommand{T}"/> instance with the specified action
+        /// and condition.
+        /// </summary>
+        /// <param name="what">The method to be called when the command is invoked.</param>
         public RelayCommand(Action<T> what)
             : this(what, null)
         { }
 
+        /// <summary>
+        /// Creates a new <see cref="RelayCommand{T}"/> instance with the specified action
+        /// and condition.
+        /// </summary>
+        /// <param name="what">The method to be called when the command is invoked.</param>
+        /// <param name="when">The method that determines whether the command can execute in its current state.</param>
         public RelayCommand(Action<T> what, Predicate<T> when)
         {
             exec = what;

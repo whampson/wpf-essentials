@@ -5,9 +5,18 @@
     <UseWpf>True</UseWpf>
     <AssemblyName>WpfEssentials</AssemblyName>
     <RootNamespace>WpfEssentials</RootNamespace>
-    <Copyright>(C) 2019 Wes Hampson</Copyright>
+    <Copyright>(C) 2019-2020 Wes Hampson</Copyright>
     <Company />
     <Authors>Wes Hampson</Authors>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>WPF WpfEssentials MessageBoxEx ObservableObject RelayCommand FullyObservableCollection EnumDescriptionConverter</PackageTags>
+    <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
+    <Version>1.0.0-preview1</Version>
+    <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>.NET package containing helper classes, extension methods, converters, and an INotifyPropertyChanged implementation designed to simplify WPF app development.</Description>
+    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>

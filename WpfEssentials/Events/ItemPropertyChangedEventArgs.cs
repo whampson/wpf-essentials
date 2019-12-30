@@ -1,12 +1,17 @@
 ﻿using System.ComponentModel;
 
-namespace WpfEssentials.ComponentModel
+namespace WpfEssentials.Events
 {
     /// <summary>
     /// Provides data for the <see cref="FullyObservableCollection{T}.ItemPropertyChanged"/> event.
     /// </summary>
     public class ItemPropertyChangedEventArgs : PropertyChangedEventArgs
     {
+        /// <summary>
+        /// The index in the collection of the item that changed state.
+        /// </summary>
+        public int ItemIndex { get; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemPropertyChangedEventArgs"/> class.
         /// </summary>
@@ -35,10 +40,5 @@ namespace WpfEssentials.ComponentModel
         public ItemPropertyChangedEventArgs(int itemIndex, PropertyChangedEventArgs args)
             : this(itemIndex, args.PropertyName)
         { }
-
-        /// <summary>
-        /// The index in the collection of the item that changed state.
-        /// </summary>
-        public int ItemIndex { get; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using WpfEssentials.Collections;
-using WpfEssentials.ComponentModel;
+using WpfEssentials.Events;
 using Xunit;
 
 namespace WpfEssentials.Tests

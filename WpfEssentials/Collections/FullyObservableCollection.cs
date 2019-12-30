@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using WpfEssentials.ComponentModel;
+using WpfEssentials.Events;
 
 namespace WpfEssentials.Collections
 {
@@ -13,7 +13,8 @@ namespace WpfEssentials.Collections
     /// in addition to changes in the collection itself.
     /// </summary>
     /// <remarks>
-    /// Adapted from http://code.i-harness.com/en/q/15c80f.
+    /// Adapted from code by various authors.
+    /// http://code.i-harness.com/en/q/15c80f.
     /// </remarks>
     public class FullyObservableCollection<T> : ObservableCollection<T>
         where T : INotifyPropertyChanged

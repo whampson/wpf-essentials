@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.Windows;
 using System.Windows.Data;
 using WpfEssentials.Extensions;
 
@@ -18,7 +17,7 @@ namespace WpfEssentials.Converters
         {
             if (value == null || !(value is Enum))
             {
-                return DependencyProperty.UnsetValue;
+                return value;
             }
 
             return (value as Enum).GetDescription();

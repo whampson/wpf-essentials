@@ -5,6 +5,9 @@ using System.Reflection;
 
 namespace WpfEssentials.Extensions
 {
+    /// <summary>
+    /// Extension methods for enums.
+    /// </summary>
     public static class EnumExtensions
     {
         /// <summary>

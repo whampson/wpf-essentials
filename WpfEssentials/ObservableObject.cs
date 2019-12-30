@@ -21,6 +21,14 @@ namespace WpfEssentials
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// Returns whether an exception is thrown, or if a Debug.Fail() is used
+        /// when an invalid property name is passed to the VerifyPropertyName method.
+        /// The default value is false, but subclasses used by unit tests might
+        /// override this property's getter to return true.
+        /// </summary>
+        protected virtual bool ThrowOnInvalidPropertyName { get; private set; }
+
+        /// <summary>
         /// Raises the <see cref="PropertyChanged"/> event.
         /// </summary>
         /// <param name="propertyName">The name of the property that changed state.</param>
@@ -53,13 +61,5 @@ namespace WpfEssentials
                 }
             }
         }
-
-        /// <summary>
-        /// Returns whether an exception is thrown, or if a Debug.Fail() is used
-        /// when an invalid property name is passed to the VerifyPropertyName method.
-        /// The default value is false, but subclasses used by unit tests might
-        /// override this property's getter to return true.
-        /// </summary>
-        protected virtual bool ThrowOnInvalidPropertyName { get; private set; }
     }
 }

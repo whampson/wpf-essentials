@@ -7,7 +7,7 @@ namespace WpfEssentials.Win32
     /// Provides a simple way to bind functions to components in a view.
     /// </summary>
     /// <remarks>
-    /// Adapted from Josh Smith's RelayCommand class.
+    /// Adopted from Josh Smith's RelayCommand class.
     /// https://msdn.microsoft.com/en-us/magazine/dd419663.aspx
     /// </remarks>
     public class RelayCommand : ICommand
@@ -35,6 +35,9 @@ namespace WpfEssentials.Win32
             canExecute = when;
         }
 
+        /// <summary>
+        /// Occurs when conditions are detected that might change the ability of a command to execute.
+        /// </summary>
         public event EventHandler CanExecuteChanged
         {
             add
@@ -54,11 +57,20 @@ namespace WpfEssentials.Win32
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this command can execute.
+        /// </summary>
+        /// <param name="parameter">An execution parameter.</param>
+        /// <returns>True if the command can execute, false otherwise.</returns>
         public bool CanExecute(object parameter)
         {
             return (canExecute == null) ? true : canExecute();
         }
 
+        /// <summary>
+        /// Executes this command.
+        /// </summary>
+        /// <param name="parameter">An execution parameter.</param>
         public void Execute(object parameter)
         {
             execute();
@@ -68,11 +80,9 @@ namespace WpfEssentials.Win32
     /// <summary>
     /// Provides a simple way to bind functions to components in a view.
     /// </summary>
-    /// <typeparam name="T">
-    /// Action parameter type.
-    /// </typeparam>
+    /// <typeparam name="T">The action parameter type.</typeparam>
     /// <remarks>
-    /// Adapted from Josh Smith's RelayCommand class.
+    /// Adopted from Josh Smith's RelayCommand class.
     /// https://msdn.microsoft.com/en-us/magazine/dd419663.aspx
     /// </remarks>
     public class RelayCommand<T> : ICommand
@@ -101,6 +111,9 @@ namespace WpfEssentials.Win32
             canExec = when;
         }
 
+        /// <summary>
+        /// Occurs when conditions are detected that might change the ability of a command to execute.
+        /// </summary>
         public event EventHandler CanExecuteChanged
         {
             add
@@ -120,11 +133,20 @@ namespace WpfEssentials.Win32
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this command can execute.
+        /// </summary>
+        /// <param name="parameter">An execution parameter.</param>
+        /// <returns>True if the command can execute, false otherwise.</returns>
         public bool CanExecute(object parameter)
         {
             return (canExec == null) ? true : canExec((T) parameter);
         }
 
+        /// <summary>
+        /// Executes this command.
+        /// </summary>
+        /// <param name="parameter">An execution parameter.</param>
         public void Execute(object parameter)
         {
             exec((T) parameter);

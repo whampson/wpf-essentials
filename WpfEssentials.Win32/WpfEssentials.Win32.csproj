@@ -1,23 +1,55 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-      <UseWpf>True</UseWpf>
-      <TargetFrameworks>netcoreapp3.0;net461;</TargetFrameworks>
-      <AssemblyName>WpfEssentials.Win32</AssemblyName>
-      <RootNamespace>WpfEssentials.Win32</RootNamespace>
-      <Copyright>(C) 2019-2020 Wes Hampson</Copyright>
-      <Company>Wes Hampson</Company>
-      <Authors>Wes Hampson</Authors>
-      <RepositoryType>GitHub</RepositoryType>
-      <PackageTags>WPF Essentials Win32 WpfEssentials RelayCommand EnumDescriptionConverter EnumValueCollection MessageBoxEx MessageBoxEventArgs FileDialogEventArgs</PackageTags>
-      <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
-      <Version>1.1.0</Version>
-      <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
-      <NeutralLanguage>en-US</NeutralLanguage>
-      <PackageLicenseExpression>MIT</PackageLicenseExpression>
-      <Description>A .NET package containing data types, base classes, extension methods, and converters designed to simplify Win32 WPF app development.</Description>
-      <PackageReleaseNotes>Split up cross-platform and Win32-specific code.</PackageReleaseNotes>
-      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <UseWpf>True</UseWpf>
+    <TargetFrameworks>netcoreapp3.0;net461;</TargetFrameworks>
+    <AssemblyName>WpfEssentials.Win32</AssemblyName>
+    <RootNamespace>WpfEssentials.Win32</RootNamespace>
+    <Copyright>(C) 2019-2020 Wes Hampson</Copyright>
+    <Company>Wes Hampson</Company>
+    <Authors>Wes Hampson</Authors>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>WPF Essentials Win32 WpfEssentials RelayCommand EnumDescriptionConverter EnumValueCollection MessageBoxEx MessageBoxEventArgs FileDialogEventArgs</PackageTags>
+    <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
+    <Version>1.2.0</Version>
+    <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>A .NET package containing data types, base classes, extension methods, and converters designed to simplify Win32 WPF app development.</Description>
+    <PackageReleaseNotes>Split up cross-platform and Win32-specific code.</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyVersion>1.2.0.3</AssemblyVersion>
+    <FileVersion>1.2.0.3</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.0|AnyCPU'">
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>True</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SemVer1</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyInfoVersionSemVerSettings>AssemblyVersion.NoneWithAutoReset.None</AssemblyInfoVersionSemVerSettings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.0|AnyCPU'">
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>True</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SemVer1</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyInfoVersionSemVerSettings>AssemblyVersion.NoneWithAutoReset.None</AssemblyInfoVersionSemVerSettings>
+    <DocumentationFile>D:\Projects\WpfEssentials\WpfEssentials.Win32\WpfEssentials.Win32.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

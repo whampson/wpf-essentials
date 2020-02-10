@@ -25,7 +25,7 @@ namespace WpfEssentials.Win32.Tests
         public void Convert(object input, object expectedResult)
         {
             EnumDescriptionConverter conv = new EnumDescriptionConverter();
-            object result = conv.Convert(input, typeof(string), null, CultureInfo.InvariantCulture);
+            object result = conv.Convert(input, null, null, CultureInfo.InvariantCulture);
 
             Assert.Equal(expectedResult, result);
         }

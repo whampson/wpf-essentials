@@ -330,12 +330,12 @@ namespace WpfEssentials.Win32
 
         /* ===== Win32 imports ===== */
 
-        public delegate IntPtr HookProc(int nCode, IntPtr wParam, IntPtr lParam);
-        public delegate void TimerProc(IntPtr hWind, uint uMsg, UIntPtr nIDEvent, uint dwTime);
+        private delegate IntPtr HookProc(int nCode, IntPtr wParam, IntPtr lParam);
+        private delegate void TimerProc(IntPtr hWind, uint uMsg, UIntPtr nIDEvent, uint dwTime);
 
-        public const int WH_CALLWNDPROCRET = 12;
+        private const int WH_CALLWNDPROCRET = 12;
 
-        public enum CbtHookAction : int
+        private enum CbtHookAction : int
         {
             HCBT_MOVESIZE,
             HCBT_MINMAX,
@@ -350,7 +350,7 @@ namespace WpfEssentials.Win32
         }
 
         [StructLayout(LayoutKind.Sequential)]
-        public struct CWPRETSTRUCT
+        private struct CWPRETSTRUCT
         {
             public IntPtr lResult;
             public IntPtr lParam;
@@ -366,15 +366,15 @@ namespace WpfEssentials.Win32
         private static extern int MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
 
         [DllImport("user32.dll")]
-        public static extern IntPtr SetWindowsHookEx(int idHook, HookProc lpfn, IntPtr hInstance, int threadId);
+        private static extern IntPtr SetWindowsHookEx(int idHook, HookProc lpfn, IntPtr hInstance, int threadId);
 
         [DllImport("user32.dll")]
-        public static extern int UnhookWindowsHookEx(IntPtr idHook);
+        private static extern int UnhookWindowsHookEx(IntPtr idHook);
 
         [DllImport("user32.dll")]
-        public static extern IntPtr CallNextHookEx(IntPtr idHook, int nCode, IntPtr wParam, IntPtr lParam);
+        private static extern IntPtr CallNextHookEx(IntPtr idHook, int nCode, IntPtr wParam, IntPtr lParam);
 
         [DllImport("kernel32.dll")] 
-        static extern IntPtr GetCurrentThreadId();
+        private static extern IntPtr GetCurrentThreadId();
     }
 }

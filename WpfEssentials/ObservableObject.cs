@@ -6,11 +6,11 @@ using System.Runtime.CompilerServices;
 namespace WpfEssentials
 {
     /// <summary>
-    /// Allows changes in object state to be detected by the view
-    /// via the <see cref="PropertyChanged"/> event.
+    /// An implementation of <see cref="INotifyPropertyChanged"/>, which allows
+    /// a view to detect changes made to an object.
     /// </summary>
     /// <remarks>
-    /// Adapted from Rachel Lim's ObservableObject class.
+    /// Adopted from Rachel Lim's ObservableObject class.
     /// https://rachel53461.wordpress.com/2011/05/08/simplemvvmexample/
     /// </remarks>
     public abstract class ObservableObject : INotifyPropertyChanged

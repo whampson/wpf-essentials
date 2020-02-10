@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Data;
 using WpfEssentials.Extensions;
+using WpfEssentials.Win32.Properties;
 
 namespace WpfEssentials.Win32.Converters
 {
@@ -12,8 +13,9 @@ namespace WpfEssentials.Win32.Converters
     /// Enum's ToString() value is used instead.
     /// </summary>
     [ValueConversion(typeof(Enum), typeof(string))]
-    public class EnumDescriptionConverter : IValueConverter
+    public sealed class EnumDescriptionConverter : IValueConverter
     {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null || !(value is Enum))
@@ -26,7 +28,8 @@ namespace WpfEssentials.Win32.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value;
+            throw new NotSupportedException(Resources.NotSupported_ConvertBack); ;
         }
+#pragma warning restore CS1591
     }
 }

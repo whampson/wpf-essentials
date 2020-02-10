@@ -8,18 +8,18 @@
     <Company>Wes Hampson</Company>
     <Authors>Wes Hampson</Authors>
     <RepositoryType>GitHub</RepositoryType>
-    <PackageTags>WpfEssentials ObservableObject ObservableCollection FullyObservableCollection INotifyPropertyChanged WPF Essentials Observable Notify EnumDescription</PackageTags>
+    <PackageTags>WpfEssentials ObservableObject ObservableCollection FullyObservableCollection INotifyItemStateChanged INotifyPropertyChanged WPF Essentials Observable Notify EnumDescription</PackageTags>
     <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
     <Version>1.2.0</Version>
     <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>A .NET package containing data types, base classes, and extension methods designed to simplify WPF app development.</Description>
-    <PackageReleaseNotes>Split up cross-platform and Win32-specific code.</PackageReleaseNotes>
+    <Description>A .NET package containing data types and extension methods designed to simplify WPF app development.</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>1.2.0.5</AssemblyVersion>
-    <FileVersion>1.2.0.5</FileVersion>
+    <AssemblyVersion>1.2.0.12</AssemblyVersion>
+    <FileVersion>1.2.0.12</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup>

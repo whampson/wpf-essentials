@@ -9,18 +9,18 @@
     <Company>Wes Hampson</Company>
     <Authors>Wes Hampson</Authors>
     <RepositoryType>GitHub</RepositoryType>
-    <PackageTags>WPF Essentials Win32 WpfEssentials RelayCommand EnumDescriptionConverter EnumValueCollection MessageBoxEx MessageBoxEventArgs FileDialogEventArgs</PackageTags>
+    <PackageTags>WPF Essentials Win32 WpfEssentials RelayCommand EnumDescriptionConverter NullBooleanConverter InvertBooleanConverter EnumValueCollection MessageBoxEx MessageBoxEventArgs FileDialogEventArgs</PackageTags>
     <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
     <Version>1.2.0</Version>
     <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>A .NET package containing data types, base classes, extension methods, and converters designed to simplify Win32 WPF app development.</Description>
-    <PackageReleaseNotes>Split up cross-platform and Win32-specific code.</PackageReleaseNotes>
+    <Description>A .NET package containing data types, extension methods, helper classes, and value converters designed to simplify Win32 WPF app development.</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>1.2.0.3</AssemblyVersion>
-    <FileVersion>1.2.0.3</FileVersion>
+    <AssemblyVersion>1.2.0.9</AssemblyVersion>
+    <FileVersion>1.2.0.9</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -49,7 +49,6 @@
     <AssemblyInfoVersionType>SemVer1</AssemblyInfoVersionType>
     <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
     <AssemblyInfoVersionSemVerSettings>AssemblyVersion.NoneWithAutoReset.None</AssemblyInfoVersionSemVerSettings>
-    <DocumentationFile>D:\Projects\WpfEssentials\WpfEssentials.Win32\WpfEssentials.Win32.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

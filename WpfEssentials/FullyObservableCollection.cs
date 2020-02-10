@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using WpfEssentials.Extensions;
 
 namespace WpfEssentials
 {
@@ -12,23 +12,27 @@ namespace WpfEssentials
     /// in addition to monitoring changes made to the collection itself.
     /// </summary>
     /// <remarks>
-    /// Adapted from code by various authors.
+    /// Adopted and exapanded from code by various authors.
     /// http://code.i-harness.com/en/q/15c80f.
     /// </remarks>
-    public class FullyObservableCollection<T> : ObservableCollection<T>
-        where T : INotifyPropertyChanged
+    public class FullyObservableCollection<T> : ObservableCollection<T>, INotifyItemStateChanged
     {
         /// <summary>
         /// Occurs when a property within an item in the collection changes state.
+        /// Note: this is only fired if the item type implements <see cref="INotifyPropertyChanged"/>.
         /// </summary>
-        public event EventHandler<ItemPropertyChangedEventArgs> ItemPropertyChanged;
+        public event NotifyItemStateChangedEventHandler ItemStateChanged;
+
+        private readonly bool m_itemsAreObservable;
 
         /// <summary>
         /// Creates a new empty <see cref="FullyObservableCollection{T}"/>.
         /// </summary>
         public FullyObservableCollection()
             : base()
-        { }
+        {
+            m_itemsAreObservable = typeof(T).IsObservable();
+        }
 
         /// <summary>
         /// Creates a new <see cref="FullyObservableCollection{T}"/>
@@ -41,6 +45,7 @@ namespace WpfEssentials
         public FullyObservableCollection(List<T> list)
             : base(list)
         {
+            m_itemsAreObservable = typeof(T).IsObservable();
             ObserveAll();
         }
 
@@ -55,47 +60,54 @@ namespace WpfEssentials
         public FullyObservableCollection(IEnumerable<T> collection)
             : base(collection)
         {
+            m_itemsAreObservable = typeof(T).IsObservable();
             ObserveAll();
         }
 
+        /// <summary>
+        /// Registers or unregisters <see cref="INotifyPropertyChanged"/> event handlers from
+        /// items in the list depending on <paramref name="e"/>, then fires the
+        /// <see cref="ObservableCollection{T}.CollectionChanged"/> event.
+        /// </summary>
+        /// <param name="e">The event arguments.</param>
         protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
         {
-            if (e.Action == NotifyCollectionChangedAction.Remove ||
-                e.Action == NotifyCollectionChangedAction.Replace)
+            if (m_itemsAreObservable)
             {
-                foreach (T item in e.OldItems)
+                if (e.Action == NotifyCollectionChangedAction.Remove ||
+                    e.Action == NotifyCollectionChangedAction.Replace)
                 {
-                    item.PropertyChanged -= ChildPropertyChanged;
+                    foreach (T item in e.OldItems)
+                    {
+                        ((INotifyPropertyChanged) item).PropertyChanged -= ItemPropertyChangedHandler;
+                    }
                 }
-            }
 
-            if (e.Action == NotifyCollectionChangedAction.Add ||
-                e.Action == NotifyCollectionChangedAction.Replace)
-            {
-                foreach (T item in e.NewItems)
+                if (e.Action == NotifyCollectionChangedAction.Add ||
+                    e.Action == NotifyCollectionChangedAction.Replace)
                 {
-                    item.PropertyChanged += ChildPropertyChanged;
+                    foreach (T item in e.NewItems)
+                    {
+                        ((INotifyPropertyChanged) item).PropertyChanged += ItemPropertyChangedHandler;
+                    }
                 }
             }
 
             base.OnCollectionChanged(e);
         }
 
-        protected void OnItemPropertyChanged(ItemPropertyChangedEventArgs e)
-        {
-            ItemPropertyChanged?.Invoke(this, e);
-        }
-
-        protected void OnItemPropertyChanged(int index, PropertyChangedEventArgs e)
-        {
-            OnItemPropertyChanged(new ItemPropertyChangedEventArgs(index, e));
-        }
-
+        /// <summary>
+        /// Unregisters <see cref="INotifyPropertyChanged"/> event handlers from each item,
+        /// then empties the collection.
+        /// </summary>
         protected override void ClearItems()
         {
-            foreach (T item in Items)
+            if (m_itemsAreObservable)
             {
-                item.PropertyChanged -= ChildPropertyChanged;
+                foreach (T item in Items)
+                {
+                    ((INotifyPropertyChanged) item).PropertyChanged -= ItemPropertyChangedHandler;
+                }
             }
 
             base.ClearItems();
@@ -103,26 +115,25 @@ namespace WpfEssentials
 
         private void ObserveAll()
         {
-            foreach (T item in Items)
+            if (m_itemsAreObservable)
             {
-                item.PropertyChanged += ChildPropertyChanged;
+                foreach (T item in Items)
+                {
+                    ((INotifyPropertyChanged) item).PropertyChanged += ItemPropertyChangedHandler;
+                }
             }
         }
 
-        private void ChildPropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void ItemPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
         {
-            if (!(sender is T typedSender))
+            if (sender is T typedSender)
             {
-                return;
+                int i = Items.IndexOf(typedSender);
+                if (i > -1)
+                {
+                    ItemStateChanged?.Invoke(this, new ItemStateChangedEventArgs(i, e));
+                }
             }
-
-            int i = Items.IndexOf(typedSender);
-            if (i == -1)
-            {
-                return;
-            }
-
-            OnItemPropertyChanged(i, e);
         }
     }
 }

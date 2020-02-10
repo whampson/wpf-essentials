@@ -61,6 +61,15 @@ namespace WpfEssentials.Win32.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ConvertBack is not supported for this converter..
+        /// </summary>
+        internal static string NotSupported_ConvertBack {
+            get {
+                return ResourceManager.GetString("NotSupported_ConvertBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This operation is not supported for the selected FileDialog type..
         /// </summary>
         internal static string NotSupported_FileDialog {

@@ -6,8 +6,7 @@ using System.Windows.Markup;
 namespace WpfEssentials.Win32.Extensions
 {
     /// <summary>
-    /// A <see cref="MarkupExtension"/> that creates a collection of all values in
-    /// an <see cref="Enum"/>.
+    /// A <see cref="MarkupExtension"/> that creates a collection of all values in an <see cref="Enum"/>.
     /// </summary>
     public class EnumValueCollectionExtension : MarkupExtension
     {
@@ -16,6 +15,11 @@ namespace WpfEssentials.Win32.Extensions
         /// </summary>
         public Type EnumType { get; set; }
 
+        /// <summary>
+        /// Returns an object that is provided as the value of the target property for this markup extension.
+        /// </summary>
+        /// <param name="_">(unused)</param>
+        /// <returns>The object value to set on the property where the extension is applied.</returns>
         public override object ProvideValue(IServiceProvider _)
         {
             if (EnumType != null)

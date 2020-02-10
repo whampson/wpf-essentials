@@ -272,6 +272,11 @@ namespace WpfEssentials.Win32
             remove { m_dialog.FileOk -= value; }
         }
 
+        /// <summary>
+        /// Creates a new <see cref="FileDialogEventArgs"/> instance.
+        /// </summary>
+        /// <param name="dialogType">The dialog type.</param>
+        /// <param name="callback">The action to perform when the dialog closes.</param>
         public FileDialogEventArgs(FileDialogType dialogType,
             Action<bool?, FileDialogEventArgs> callback = null)
         {
@@ -290,11 +295,20 @@ namespace WpfEssentials.Win32
 
         }
 
+        /// <summary>
+        /// Shows a <see cref="FileDialog"/> with the provided arguments.
+        /// When the dialog is closed, the callback action is performed (if provided).
+        /// </summary>
         public void ShowDialog()
         {
             ShowDialog(null);
         }
 
+        /// <summary>
+        /// Shows a <see cref="FileDialog"/> over the specified <see cref="Window"/> with the provided arguments.
+        /// When the dialog is closed, the callback action is performed (if provided).
+        /// </summary>
+        /// <param name="owner">A <see cref="Window"/> that represents the owner window of the file dialog.</param>
         public void ShowDialog(Window owner)
         {
             bool? result = (owner == null)
@@ -304,6 +318,10 @@ namespace WpfEssentials.Win32
             Callback?.Invoke(result, this);
         }
 
+        /// <summary>
+        /// Opens the selected file.
+        /// </summary>
+        /// <returns>A stream for accessing the file.</returns>
         public Stream OpenFile()
         {
             if (IsOpenFileDialog)
@@ -314,6 +332,10 @@ namespace WpfEssentials.Win32
             return (m_dialog as SaveFileDialog).OpenFile();
         }
 
+        /// <summary>
+        /// Opens the selected files.
+        /// </summary>
+        /// <returns>An array of stream for accessing each file.</returns>
         public Stream[] OpenFiles()
         {
             if (IsOpenFileDialog)

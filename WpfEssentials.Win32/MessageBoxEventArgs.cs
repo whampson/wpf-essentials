@@ -71,8 +71,8 @@ namespace WpfEssentials.Win32
         }
 
         /// <summary>
-        /// Show a message box with the provided arguments,
-        /// then performs the callback action if provided.
+        /// Show a message box with the provided arguments.
+        /// When the dialog is closed, the callback action is performed (if provided).
         /// </summary>
         public void Show()
         {
@@ -80,10 +80,10 @@ namespace WpfEssentials.Win32
         }
 
         /// <summary>
-        /// Show a message box over the specified <see cref="Window"/> with the provided arguments,
-        /// then performs the callback action if provided.
-        /// <param name="owner">A <see cref="Window"/> that represents the owner window of the message box.</param>
+        /// Show a message box over the specified <see cref="Window"/> with the provided arguments.
+        /// When the dialog is closed, the callback action is performed (if provided).
         /// </summary>
+        /// <param name="owner">A <see cref="Window"/> that represents the owner window of the message box.</param>
         public void Show(Window owner)
         {
             MessageBoxResult result = (owner == null)

@@ -19,8 +19,8 @@
     <PackageReleaseNotes></PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>1.2.0.9</AssemblyVersion>
-    <FileVersion>1.2.0.9</FileVersion>
+    <AssemblyVersion>1.2.0.10</AssemblyVersion>
+    <FileVersion>1.2.0.10</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup>

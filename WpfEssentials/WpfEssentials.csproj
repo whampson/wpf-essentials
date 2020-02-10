@@ -18,8 +18,8 @@
     <PackageReleaseNotes></PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>1.2.0.12</AssemblyVersion>
-    <FileVersion>1.2.0.12</FileVersion>
+    <AssemblyVersion>1.2.0.13</AssemblyVersion>
+    <FileVersion>1.2.0.13</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup>

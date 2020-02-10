@@ -4,8 +4,8 @@
 [![Build Status](https://github.com/whampson/WpfEssentials/workflows/macOS/badge.svg)](https://github.com/whampson/WpfEssentials/actions)
 [![Build Status](https://github.com/whampson/WpfEssentials/workflows/Linux/badge.svg)](https://github.com/whampson/WpfEssentials/actions)
 
-A .NET package containing data types, base classes, and extension methods
-designed to simplify WPF app development.
+A .NET package containing data types and extension methods designed to simplify
+WPF app development.
 
 ### Features
 - `ObservableObject` - An `INotifyPropertyChanged` implementation that allows
@@ -14,11 +14,12 @@ this class and call `OnPropertyChanged()` in your setters.
 - `FullyObservableCollection` - An `ObservableCollection` that allows the view
 to monitor changes to the state of each item in the collection, in addition to
 being able to monitor changes made to the collection itself. You can bind your
-view to the `ItemPropertyChanged` event to listen for item state changes.
+view to the `ItemStateChanged` event to listen for item state changes.
 - `EnumExtensions` - Extension methods for the `Enum` class. Provides useful
 methods like `GetDescription()` for extracting a description string from a
 `DescriptionAttribute`, and the more generic `GetAttribute<T>()` for getting a
 reference to an arbitrary `Attribute` attached to an enum value.
+- *And more!*
 
 ## WpfEssentials.Win32
 [![Nuget (WpfEssentials.Win32)](https://img.shields.io/nuget/v/WpfEssentials.Win32)](https://www.nuget.org/packages/WpfEssentials.Win32/)
@@ -48,6 +49,7 @@ message box with little code-behind.
 function that's invoked with the dialog result and dialog state when closed.
 Useful if you're following MVVM and want to display a file dialog for
 opening/saving a file with little code-behind.
+- *And more!*
 
 See examples of these classes in use [here](https://github.com/whampson/WpfEssentials/tree/master/WpfEssentials.Win32.Examples)!
 

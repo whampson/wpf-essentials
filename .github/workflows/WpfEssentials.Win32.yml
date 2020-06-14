@@ -1,0 +1,23 @@
+name: WpfEssentials.Win32
+
+on:
+  push:
+    branches: [ master, win32 ]
+  pull_request:
+    branches: [ master, win32 ]
+  schedule:
+    - cron: '0 2 * * 1'   # At 02:00 on Monday
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.100
+    - name: Build
+      run: dotnet build -c Release WpfEssentials.Win32 
+    - name: Test
+      run: dotnet test -c Release WpfEssentials.Win32.Tests

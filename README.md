@@ -1,8 +1,6 @@
 # WpfEssentials
 [![Nuget (WpfEssentials)](https://img.shields.io/nuget/v/WpfEssentials)](https://www.nuget.org/packages/WpfEssentials/)
-[![Build Status](https://github.com/whampson/WpfEssentials/workflows/Windows/badge.svg)](https://github.com/whampson/WpfEssentials/actions)
-[![Build Status](https://github.com/whampson/WpfEssentials/workflows/macOS/badge.svg)](https://github.com/whampson/WpfEssentials/actions)
-[![Build Status](https://github.com/whampson/WpfEssentials/workflows/Linux/badge.svg)](https://github.com/whampson/WpfEssentials/actions)
+[![Build Status](https://github.com/whampson/WpfEssentials/workflows/WpfEssentials/badge.svg)](https://github.com/whampson/WpfEssentials/actions)
 
 A .NET package containing data types and extension methods designed to simplify
 WPF app development.
@@ -23,7 +21,7 @@ reference to an arbitrary `Attribute` attached to an enum value.
 
 ## WpfEssentials.Win32
 [![Nuget (WpfEssentials.Win32)](https://img.shields.io/nuget/v/WpfEssentials.Win32)](https://www.nuget.org/packages/WpfEssentials.Win32/)
-[![Build Status](https://github.com/whampson/WpfEssentials/workflows/Win32/badge.svg)](https://github.com/whampson/WpfEssentials/actions)
+[![Build Status](https://github.com/whampson/WpfEssentials/workflows/WpfEssentials.Win32/badge.svg)](https://github.com/whampson/WpfEssentials/actions)
 
 A Win32-specific extension of **WpfEssentials**.
 

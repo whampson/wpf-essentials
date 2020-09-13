@@ -1,15 +1,16 @@
-﻿<Window x:Class="WpfEssentials.Examples.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfEssentials.Examples"
-        xmlns:conv="clr-namespace:WpfEssentials.Win32.Converters;assembly=WpfEssentials.Win32"
-        xmlns:ext="clr-namespace:WpfEssentials.Win32.Extensions;assembly=WpfEssentials.Win32"
-        mc:Ignorable="d"
-        Title="Example"
-        Height="350" Width="600"
-        Closing="Window_Closing">
+﻿<Window
+    x:Class="WpfEssentials.Examples.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WpfEssentials.Examples"
+    xmlns:conv="clr-namespace:WpfEssentials.Win32.Converters;assembly=WpfEssentials.Win32"
+    xmlns:ext="clr-namespace:WpfEssentials.Win32.Extensions;assembly=WpfEssentials.Win32"
+    mc:Ignorable="d"
+    Title="Example"
+    Height="350" Width="600"
+    Closing="Window_Closing">
 
     <Window.Resources>
         <conv:EnumDescriptionConverter x:Key="EnumDescriptionConverter"/>
@@ -51,40 +52,47 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                Style="{StaticResource ButtonStyle}"
-                Content="Click Me!"
-                Command="{Binding ClickMeCommand}"/>
+        <Button
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+            Style="{StaticResource ButtonStyle}"
+            Content="Click Me!"
+            Command="{Binding ClickMeCommand}"/>
 
-        <Button Grid.Row="0" Grid.Column="2"
-                Style="{StaticResource ButtonStyle}"
-                Content="Open Text File(s)"
-                Command="{Binding OpenFileCommand}"
-                IsEnabled="{Binding ButtonClicked}"/>
+        <Button
+            Grid.Row="0" Grid.Column="2"
+            Style="{StaticResource ButtonStyle}"
+            Content="Open Text File(s)"
+            Command="{Binding OpenFileCommand}"
+            IsEnabled="{Binding ButtonClicked}"/>
 
-        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
-                 Margin="5"
-                 ItemsSource="{Binding OpenFiles}"
-                 SelectedIndex="{Binding OpenFileSelectedIndex}"
-                 SelectionChanged="ListBox_SelectionChanged"/>
+        <ListBox
+            Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+            Margin="5"
+            ItemsSource="{Binding OpenFiles}"
+            SelectedIndex="{Binding OpenFileSelectedIndex}"
+            SelectionChanged="ListBox_SelectionChanged"/>
 
-        <TextBox Grid.Row="1" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="3"
-                 Margin="5"
-                 TextWrapping="Wrap"
-                 IsReadOnly="True"
-                 VerticalScrollBarVisibility="Visible"
-                 Text="{Binding Text}"/>
+        <TextBox
+            Grid.Row="1" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="3"
+            Margin="5"
+            TextWrapping="Wrap"
+            IsReadOnly="True"
+            VerticalScrollBarVisibility="Visible"
+            Text="{Binding Text}"/>
 
-        <Label Grid.Row="2" Grid.Column="0"
-               HorizontalAlignment="Right"
-               VerticalAlignment="Center"
-               Content="Display:"/>
+        <Label
+            Grid.Row="2" Grid.Column="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="Display:"/>
 
-        <ComboBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
-                  Style="{StaticResource EnumComboBoxStyle}"
-                  ItemsSource="{ext:EnumValueCollection EnumType=local:DisplayType}"
-                  SelectedItem="{Binding SelectedDisplayType}"
-                  SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox
+            Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            Style="{StaticResource EnumComboBoxStyle}"
+            ItemsSource="{ext:EnumValueCollection EnumType=local:DisplayType, StartIndex=1}"
+            SelectedItem="{Binding SelectedDisplayType}"
+            SelectionChanged="ComboBox_SelectionChanged"/>
 
     </Grid>
 </Window>

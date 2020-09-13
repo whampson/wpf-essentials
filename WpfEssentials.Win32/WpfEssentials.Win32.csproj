@@ -11,16 +11,17 @@
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>WPF Essentials Win32 WpfEssentials RelayCommand EnumDescriptionConverter NullBooleanConverter InvertBooleanConverter EnumValueCollection MessageBoxEx MessageBoxEventArgs FileDialogEventArgs</PackageTags>
     <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
-    <Version>1.2.0</Version>
     <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
+    <Version>1.2.1</Version>
+    <AssemblyVersion>1.2.1.22</AssemblyVersion>
+    <FileVersion>1.2.1.22</FileVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>A .NET package containing data types, extension methods, helper classes, and value converters designed to simplify Win32 WPF app development.</Description>
+    <Description>Data types, extension methods, helper classes, and value converters designed to simplify Win32 WPF app development.</Description>
+    <PackageReleaseNotes>Added 'StartIndex' and 'EndIndex' to EnumValueCollection.</PackageReleaseNotes>
     <PackageReleaseNotes></PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>1.2.0.10</AssemblyVersion>
-    <FileVersion>1.2.0.10</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup>

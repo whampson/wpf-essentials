@@ -10,16 +10,16 @@
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>WpfEssentials ObservableObject ObservableCollection FullyObservableCollection INotifyItemStateChanged INotifyPropertyChanged WPF Essentials Observable Notify EnumDescription</PackageTags>
     <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
-    <Version>1.2.0</Version>
     <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
+    <Version>1.2.1</Version>
+    <AssemblyVersion>1.2.1.23</AssemblyVersion>
+    <FileVersion>1.2.1.23</FileVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>A .NET package containing data types and extension methods designed to simplify WPF app development.</Description>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <Description>Data types and extension methods designed to simplify WPF app development.</Description>
+    <PackageReleaseNotes>Bug fixes.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>1.2.0.13</AssemblyVersion>
-    <FileVersion>1.2.0.13</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup>

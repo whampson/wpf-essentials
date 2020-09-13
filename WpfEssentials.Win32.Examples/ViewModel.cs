@@ -11,6 +11,9 @@ namespace WpfEssentials.Examples
 {
     public enum DisplayType
     {
+        [Description("Do not show this option")]
+        None,
+
         [Description("Full Path")]
         FullPath,
 
@@ -105,6 +108,8 @@ namespace WpfEssentials.Examples
         public ViewModel()
         {
             m_openFilesFullPaths = new ObservableCollection<string>();
+            OpenFiles = new ObservableCollection<string>();
+            SelectedDisplayType = DisplayType.FilenameOnly;
         }
 
         public void ReadSelectedFile()

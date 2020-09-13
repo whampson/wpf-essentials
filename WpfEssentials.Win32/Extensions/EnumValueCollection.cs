@@ -16,6 +16,33 @@ namespace WpfEssentials.Win32.Extensions
         public Type EnumType { get; set; }
 
         /// <summary>
+        /// The index of the first enum value to include in the collection.
+        /// </summary>
+        /// <remarks>
+        /// Note: the index refers to the ordinal position in the list of enum values,
+        /// as returned by a function such as <see cref="Enum.GetValues(Type)"/>.
+        /// </remarks>
+        public int StartIndex { get; set; }
+
+        /// <summary>
+        /// The index of the last enum value to include in the collection.
+        /// </summary>
+        /// <remarks>
+        /// Note: the index refers to the ordinal position in the list of enum values,
+        /// as returned by a function such as <see cref="Enum.GetValues(Type)"/>.
+        /// </remarks>
+        public int EndIndex { get; set; }
+
+        /// <summary>
+        /// Creates a new <see cref="EnumValueCollectionExtension"/> instance.
+        /// </summary>
+        public EnumValueCollectionExtension()
+        {
+            StartIndex = -1;
+            EndIndex = -1;
+        }
+
+        /// <summary>
         /// Returns an object that is provided as the value of the target property for this markup extension.
         /// </summary>
         /// <param name="_">(unused)</param>
@@ -32,8 +59,19 @@ namespace WpfEssentials.Win32.Extensions
 
         private List<object> CreateEnumValueList(Type enumType)
         {
-            return Enum.GetNames(enumType)
+            if (StartIndex >= 0 && EndIndex >= 0 && StartIndex > EndIndex)
+            {
+                throw new ArgumentOutOfRangeException("StartIndex cannot be greater than EndIndex.");
+            }
+            
+            string[] names = Enum.GetNames(enumType);
+            if (StartIndex < 0) StartIndex = 0;
+            if (EndIndex < 0) EndIndex = names.Length;
+            
+            return names
                 .Select(name => Enum.Parse(enumType, name))
+                .Skip(StartIndex)
+                .Take(EndIndex)
                 .ToList();
         }
     }

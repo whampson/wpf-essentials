@@ -9,8 +9,8 @@
     <Authors>Wes Hampson</Authors>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>WpfEssentials ObservableObject ObservableCollection FullyObservableCollection INotifyItemStateChanged INotifyPropertyChanged WPF Essentials Observable Notify EnumDescription</PackageTags>
-    <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/whampson/wpf-essentials</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/whampson/wpf-essentials</PackageProjectUrl>
     <Version>1.2.1</Version>
     <AssemblyVersion>1.2.1.23</AssemblyVersion>
     <FileVersion>1.2.1.23</FileVersion>

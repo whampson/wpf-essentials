@@ -10,8 +10,8 @@
     <Authors>Wes Hampson</Authors>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>WPF Essentials Win32 WpfEssentials RelayCommand EnumDescriptionConverter NullBooleanConverter InvertBooleanConverter EnumValueCollection MessageBoxEx MessageBoxEventArgs FileDialogEventArgs</PackageTags>
-    <RepositoryUrl>https://github.com/whampson/WpfEssentials</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/whampson/WpfEssentials</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/whampson/wpf-essentials</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/whampson/wpf-essentials</PackageProjectUrl>
     <Version>1.2.1</Version>
     <AssemblyVersion>1.2.1.22</AssemblyVersion>
     <FileVersion>1.2.1.22</FileVersion>
